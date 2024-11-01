@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyotoTech</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome -->
+</head>
+<body >
+    <header id="inicio">
+        <!-- barra de pesquisa -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Pesquisar...">
+        <button id="search-btn"><i class="fa fa-search"></i></button>
+    </div>
+        <svg class="header-title" viewBox="0 0 500 100">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:rgb(0,255,0);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">KyotoTech</text>
+        </svg>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-btn">Início</a></li>
+                <li><a href="cart.html" class="nav-btn">Carrinho</a></li>
+                <li><a href="login.html" class="nav-btn">Login</a></li>    
+            </ul>
+        </nav>
+         <!-- efeito partículas ao cabeçalho, está desativado por enquanto--
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 7s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 15%; animation-delay: 1.5s;"></div>
+        <div class="particle" style="left: 25%; animation-delay: 2.5s;"></div>
+        <div class="particle" style="left: 35%; animation-delay: 3.5s;"></div>
+        <div class="particle" style="left: 45%; animation-delay: 4.5s;"></div>
+        <div class="particle" style="left: 55%; animation-delay: 5.5s;"></div>
+        <div class="particle" style="left: 65%; animation-delay: 6.5s;"></div>
+        <div class="particle" style="left: 75%; animation-delay: 7.5s;"></div>
+        <div class="particle" style="left: 85%; animation-delay: 8.5s;"></div>
+        <div class="particle" style="left: 95%; animation-delay: 9.5s;"></div> 
+    </header>-->
+    <!--<div class="loader"></div>-->
+    <main class="main-content">
+        <div class="category-buttons">
+            <button class="category-btn" data-category="all">Todos</button>
+            <button class="category-btn" data-category="category1">Eletrodomésticos</button>
+            <button class="category-btn" data-category="category2">Informática</button>
+            <button class="category-btn" data-category="category3">Celulares</button>
+            <button class="category-btn" data-category="category4">Livros</button>
+            <button class="category-btn" data-category="category5">Brinquedos</button>
+            <button class="category-btn" data-category="category6">Papelaria</button>
+        </div>
+
+        <!-- Botão para rolar até a seção de produtos -->
+        <a href="#produtos" class="scroll-btn">Ver Produtos</a>
+
+        <div class="filter-price">
+            <label for="min-price">Preço Mínimo: </label>
+            <input type="number" id="min-price" value="0">
+            <label for="max-price">Preço Máximo: </label>
+            <input type="number" id="max-price" value="1000">
+            <button onclick="filterByPrice()">Filtrar</button>
+        </div>
+
+        <!--<section class="parallax"></section>verificar problema do parallax, revisar-->
+
+        <section class="produtos" id="produtos">
+            <!--<h2>Produtos em Destaque</h2>-->
+            <div class="produto category1" data-price="2.249,90" data-product="Produto 1" style="--animation-order: 1;">
+                <a href="produto1.html">
+                    <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um celular.png" alt="Produto 1">
+                    <h3>Smartphone do futuro</h3>
+                    <p>R$ 2.249,90</p>
+                </a>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>    
+                <button onclick="addToCart('Smartphone do futuro', 2249.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto category2" data-price="1779.90" data-product="Produto 2"  style="--animation-order: 2;">
+                <a href="produto2.html">
+                    <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um monitor.png" alt="Produto 2">
+                    <h3>Monitor 24 polegadas FULLHD</h3>
+                    <p>R$ 1.779,90</p>
+                </a>    
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Monitor 24 polegadas FULLHD', 1779.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto category3" data-price="779.90" style="--animation-order: 3;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\imagem de microondas.png" alt="Produto 3">
+                <h3>Microondas</h3>
+                <p>R$ 779,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Microondas', 779.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto category4" data-price="3379.90" style="--animation-order: 4;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um laptop.png" alt="Produto 4">
+                <h3>Notebook</h3>
+                <p>R$ 3.379,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Notebook', 3379.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category5" data-price="79.90" style="--animation-order: 5;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um livro.png" alt="Produto 5">
+                <h3>Livro da vida</h3>
+                <p>R$ 79,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Livro da vida', 79.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category6" data-price="179.90" style="--animation-order: 6;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um brinquedo.png" alt="Produto 6">
+                <h3>Robô de brinquedo</h3>
+                <p>R$ 179,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Produto 6', 179.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category6" data-price="279.90" style="--animation-order: 7;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um notebook.png" alt="Produto 7">
+                <h3>Kit de papelaria</h3>
+                <p>R$ 279,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Kit de papelaria', 279.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category8" data-price="179.90" style="--animation-order: 8;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um brinquedo.png" alt="Produto 8">
+                <h3>Robô de brinquedo</h3>
+                <p>R$ 179,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Robô de brinquedo', 179.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category9" data-price="179.90" style="--animation-order: 9;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\papelaria.png" alt="Produto 9">
+                <h3>Kit de canetas</h3>
+                <p>R$ 179,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Kit de canetas', 179.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category10" data-price="2279.90" style="--animation-order: 10;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um monitor.png" alt="Produto 10">
+                <h3>Monitor de 27 polegadas</h3>
+                <p>R$ 2279,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Monitor de 27 polegadas', 2279.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category11" data-price="3379.90" style="--animation-order: 11;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um celular.png" alt="Produto 6">
+                <h3>Smartphone Samsung</h3>
+                <p>R$ 3.379,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Smartphone Samsung', 3379.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category12" data-price="5579.90" style="--animation-order: 12;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um monitor.png" alt="Produto 12">
+                <h3>Monitor Gamer</h3>
+                <p>R$ 5.579,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Monitor Gamer', 5579.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category13" data-price="4479.90" style="--animation-order: 13;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um celular.png" alt="Produto 13">
+                <h3>Iphone</h3>
+                <p>R$ 4479,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Iphone', 4479.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category14" data-price="9.90" style="--animation-order: 14;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um livro.png" alt="Produto 14">
+                <h3>Livro</h3>
+                <p>R$ 9,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Livro', 9.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category15" data-price="79.90" style="--animation-order: 15;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um livro.png" alt="Produto 15">
+                <h3>Livro Grego</h3>
+                <p>R$ 79,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Livro Grego', 79.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            <div class="produto category16" data-price="79.90" style="--animation-order: 16;">
+                <img src="c:\Users\mathe\OneDrive\Área de Trabalho\Ti\Logo da loja\um livro.png" alt="Produto 16">
+                <h3>Livro de Inglês</h3>
+                <p>R$ 79,90</p>
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div> 
+                <button onclick="addToCart('Livro de Inglês', 79.90)">Adicionar ao Carrinho</button>
+                
+            </div>
+            
+            <!-- Adicione mais produtos aqui -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 KyotoTech</p>
+        <!-- Botão de âncora para voltar ao início -->
+        <button onclick="document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });">Voltar ao Início</button>
+    </footer>
+    <footer>
+        <p>&copy; Preços e condições de pagamento exclusivos para compras via internet, podendo variar nas lojas físicas. </p>
+    </footer>
+    <footer>
+        <p>&copy; KyotoTech S/A - CNPJ: 00.000.000/0000-00
+
+            Endereço: Rua ABCD, 1234 - Centro, Uberlândia/MG - CEP 12.345-678
+            
+            ® KyotoTech – Todos os direitos reservados. Endereço eletrônico: Em construção...
+            
+            Fale conosco: Em construção...</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
